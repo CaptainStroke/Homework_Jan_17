@@ -1,7 +1,47 @@
 ﻿//1. Написать игру «Угадай число». Пользователь мысленно загадывает число от 0 до 1000, компьютер 
 //отгадывает его за минимальное количество попыток.
 
-
+#include <iostream>
+#include <ctime>
+using namespace std;
+int main()
+{
+	srand(time(NULL));
+	int N = rand() %10;
+	int M;
+	int H;
+	int L;
+	int i = 0;
+	cout << "Guess my number" << N << "\n";
+	do
+	{
+		cin >> M;
+		//L = M;
+		//cout << L;
+		i++;
+		if 
+			/*(M > N && M < L)
+		{
+			cout << "stupid" << "\n";
+		}
+		else if*/ (M > N )
+		{
+			cout << "More" << "\n";
+		}
+		else if (M < N)
+		{
+			cout << "Less" << "\n";
+		}
+	} while (M!=N);
+	if (i == 1)
+	{
+		cout << "Cheater(((";
+	}
+	else if (i>1)
+	{
+		cout << "Lucky number " << N << " in " << i << " tries";
+	}	
+}
 
 //2. Показать номера и общее количество всех счастливых трамвайных билетов с шестизначными номерами.
 
