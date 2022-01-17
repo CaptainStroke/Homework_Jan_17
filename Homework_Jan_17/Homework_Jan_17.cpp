@@ -1,57 +1,87 @@
 ﻿//1. Написать игру «Угадай число». Пользователь мысленно загадывает число от 0 до 1000, компьютер 
 //отгадывает его за минимальное количество попыток.
 
-#include <iostream>
-#include <ctime>
-using namespace std;
-int main()
-{
-	srand(time(NULL));
-	int N = rand() %1000 + 1;
-	int M=500;
-	int H;
-	int L=500;
-	int i = 0;
-	cout << "Guess my number" << N << "\n";
-	do
-	{
-		i++;
-		if (M < N && i > 12)
-		{
-			M = M + 1;
-		}
-		else if (M > N && i > 12)
-		{
-			M = M - 1;
-		}
-		else if (M < N )
-		{
-			M = M + L;
-			L = L / 2;
-		}
-		else if (M > N)
-		{
-			M = M - L;
-			L = L / 2;
-		}
-	} while (M!=N);
-	if (i == 1)
-	{
-		cout << "Cheater(((";
-	}
-	else if (i <= 8)
-	{
-		cout << "Very lucky number " << N << " in " << i << " tries";
-	}
-	else if (i>1)
-	{
-		cout << "Just lucky number " << N << " in " << i << " tries";
-	}	
-}
+//#include <iostream>
+//#include <ctime>
+//using namespace std;
+//int main()
+//{
+//	srand(time(NULL));
+//	int N = rand() %1000 + 1;
+//	int M=500;
+//	int H;
+//	int L=500;
+//	int i = 0;
+//	cout << "Guess my number" << N << "\n";
+//	do
+//	{
+//		i++;
+//		if (M < N && i > 12)
+//		{
+//			M = M + 1;
+//		}
+//		else if (M > N && i > 12)
+//		{
+//			M = M - 1;
+//		}
+//		else if (M < N )
+//		{
+//			M = M + L;
+//			L = L / 2;
+//		}
+//		else if (M > N)
+//		{
+//			M = M - L;
+//			L = L / 2;
+//		}
+//	} while (M!=N);
+//	if (i == 1)
+//	{
+//		cout << "Cheater(((";
+//	}
+//	else if (i <= 8)
+//	{
+//		cout << "Very lucky number " << N << " in " << i << " tries";
+//	}
+//	else if (i>1)
+//	{
+//		cout << "Just lucky number " << N << " in " << i << " tries";
+//	}	
+//}
 
 //2. Показать номера и общее количество всех счастливых трамвайных билетов с шестизначными номерами.
 
+#include <iostream>
+using namespace std;
+int main()
+{
+	cout << "Enter 6 digits for number. Let's find out if it is lucky\n";
+	int ticket = 0;
+	int i = 0;
+	int e=0;
+	do
+	{
+		//cin >> ticket;
+		
+		int six = ticket / 100000 % 10;
+		int five = ticket / 10000 % 10;
+		int four = ticket / 1000 % 10;
+		int three = ticket / 100 % 10;
+		int two = ticket / 10 % 10;
+		int one = ticket % 10;
+		ticket += 1;
+		if ((six + five + four) == (three + two + one))
+		{
+			e++;
+			cout << e << " - " << six << five << four << three << two << one << "\n";
+		}
+	} while (ticket < 1000000);
 
+	
+	//cin >> ticket;
+	
+	 //? cout << ("\nLucky number!!! - ") << (six + five + four) : cout << ("\nTry again - ") << six + five + four << " is not equal " << three + two + one;
+}
 
 //3. Показать на экран все восьмизначные числа, цифры в которых не повторяются.
 //Эти числа должны делиться на 12345 без остатка.Показать общее количество найденных чисел.
@@ -87,3 +117,4 @@ int main()
 //	Дракон атакует(урон 55) – осталось 4 копейщика, один из которых ранен(осталось 5 жизней).
 //	Копейщики атакуют(урон 40) – у дракона осталось 20 очков здоровья.
 //	Дракон атакует и побеждает.
+
