@@ -7,39 +7,45 @@ using namespace std;
 int main()
 {
 	srand(time(NULL));
-	int N = rand() %10;
-	int M;
+	int N = rand() %1000 + 1;
+	int M=500;
 	int H;
-	int L;
+	int L=500;
 	int i = 0;
 	cout << "Guess my number" << N << "\n";
 	do
 	{
-		cin >> M;
-		//L = M;
-		//cout << L;
 		i++;
-		if 
-			/*(M > N && M < L)
+		if (M < N && i > 12)
 		{
-			cout << "stupid" << "\n";
+			M = M + 1;
 		}
-		else if*/ (M > N )
+		else if (M > N && i > 12)
 		{
-			cout << "More" << "\n";
+			M = M - 1;
 		}
-		else if (M < N)
+		else if (M < N )
 		{
-			cout << "Less" << "\n";
+			M = M + L;
+			L = L / 2;
+		}
+		else if (M > N)
+		{
+			M = M - L;
+			L = L / 2;
 		}
 	} while (M!=N);
 	if (i == 1)
 	{
 		cout << "Cheater(((";
 	}
+	else if (i <= 8)
+	{
+		cout << "Very lucky number " << N << " in " << i << " tries";
+	}
 	else if (i>1)
 	{
-		cout << "Lucky number " << N << " in " << i << " tries";
+		cout << "Just lucky number " << N << " in " << i << " tries";
 	}	
 }
 
