@@ -76,11 +76,6 @@ int main()
 			cout << e << " - " << six << five << four << three << two << one << "\n";
 		}
 	} while (ticket < 1000000);
-
-	
-	//cin >> ticket;
-	
-	 //? cout << ("\nLucky number!!! - ") << (six + five + four) : cout << ("\nTry again - ") << six + five + four << " is not equal " << three + two + one;
 }
 
 //3. Показать на экран все восьмизначные числа, цифры в которых не повторяются.
