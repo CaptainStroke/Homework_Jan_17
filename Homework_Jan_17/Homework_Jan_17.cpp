@@ -51,37 +51,75 @@
 
 //2. Показать номера и общее количество всех счастливых трамвайных билетов с шестизначными номерами.
 
-#include <iostream>
-using namespace std;
-int main()
-{
-	cout << "Enter 6 digits for number. Let's find out if it is lucky\n";
-	int ticket = 0;
-	int i = 0;
-	int e=0;
-	do
-	{
-		//cin >> ticket;
-		
-		int six = ticket / 100000 % 10;
-		int five = ticket / 10000 % 10;
-		int four = ticket / 1000 % 10;
-		int three = ticket / 100 % 10;
-		int two = ticket / 10 % 10;
-		int one = ticket % 10;
-		ticket += 1;
-		if ((six + five + four) == (three + two + one))
-		{
-			e++;
-			cout << e << " - " << six << five << four << three << two << one << "\n";
-		}
-	} while (ticket < 1000000);
-}
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//	cout << "Enter 6 digits for number. Let's find out if it is lucky\n";
+//	int ticket = 0;
+//	int i = 0;
+//	int e=0;
+//	do
+//	{
+//		//cin >> ticket;
+//		
+//		int six = ticket / 100000 % 10;
+//		int five = ticket / 10000 % 10;
+//		int four = ticket / 1000 % 10;
+//		int three = ticket / 100 % 10;
+//		int two = ticket / 10 % 10;
+//		int one = ticket % 10;
+//		ticket += 1;
+//		if ((six + five + four) == (three + two + one))
+//		{
+//			e++;
+//			cout << e << " - " << six << five << four << three << two << one << "\n";
+//		}
+//	} while (ticket < 1000000);
+//}
 
 //3. Показать на экран все восьмизначные числа, цифры в которых не повторяются.
 //Эти числа должны делиться на 12345 без остатка.Показать общее количество найденных чисел.
 
-
+#include <iostream>
+using namespace std;
+int main()
+{
+    cout << "Enter number\n";
+    int n = 10000000;
+    //cin >> number;
+    int e = 1;
+    int i = 1;
+    do
+    {
+        if (n % 10 != n / 10 % 10 && n % 10 != n / 100 % 10 && n % 10 != n / 1000 % 10 && n % 10 != n / 10000 % 10 && n % 10 != n / 100000 % 10 && n % 10 != n/ 1000000 % 10 && n % 10 != n / 10000000 % 10)
+        {
+            cout << e << " - " << n << "\n";
+            e++;
+        }
+       /* if (number % 12345 == 0 && (number % 10 != number / 10 % 10 || number % 10 != number / 100 % 10 || number % 10 != number / 1000 % 10 || number % 10 = number / 10000 % 10
+            || number % 10 == number / 100000 % 10 || number % 10 == number / 1000000 % 10 || number % 10 == number / 10000000 % 10 )&&(  number / 10 % 10 == number / 100 % 10 || number / 10 % 10 == number / 1000 % 10 || number / 10 % 10 == number / 10000 % 10
+                || number / 10 % 10 == number / 100000 % 10 || number / 10 % 10 == number / 1000000 % 10 || number / 10 % 10 == number / 10000000 % 10)&& (number / 100 % 10 == number / 1000 % 10 || number / 100 % 10 == number / 10000 % 10
+                    || number / 100 % 10 == number / 100000 % 10 || number / 100 % 10 == number / 1000000 % 10 || number / 100 % 10 == number / 10000000 % 10) && ( number / 1000 % 10 == number / 10000 % 10
+                        || number / 1000 % 10 == number / 100000 % 10 || number / 1000 % 10 == number / 1000000 % 10 || number / 1000 % 10 == number / 10000000 % 10) && (number / 10000 % 10
+                            || number / 10000 % 10 == number / 100000 % 10 || number / 10000 % 10 == number / 1000000 % 10 || number / 10000 % 10 == number / 10000000 % 10) && (number / 100000 % 10 == number / 1000000 % 10 || number / 100000 % 10 == number / 10000000 % 10))
+        {
+            cout << e << " - " << number << "\n";
+            e++;
+        }*/
+        /*if (number % 10 == number / 10 % 10 || number % 10 == number / 100%10 || number % 10 == number / 1000 % 10 || number % 10 == number / 10000 % 10
+            || number % 10 == number / 100000 % 10 || number % 10 == number / 1000000 % 10 || number % 10 == number / 10000000 % 10)
+        {
+            cout << i << " - " << number << " same numbers\n";
+            i++;
+        }*/
+        //number = number / 10;
+        n += 1;
+    } while ((n) < 99999999);
+    {
+        cout << "e \n";
+    }
+}
 
 //4. Реализовать игровую программу «Однорукий бандит»(игровой автомат).
 //В начале игры пользователю выдаётся 5000 кредитов. Случайным образом на барабанчиках выпадает три значения от 0 до 7.
