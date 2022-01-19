@@ -119,92 +119,91 @@
 //Комбинации можно показывать через MessageBoxA, например. Зациклить работу приложения. 
 //Игра заканчивается поражением, если деньги закончились.Игра заканчивается победой, если выпадает джек - пот(7 7 7).
 
-#include <iostream>
-#include <ctime>
-using namespace std;
-int main()
-{
-	srand(time(NULL));
-	int c = 5000;//credits
-	int v = 0;//activate roll with number. aoutomatic with letter
-	int coin = 500;//cost of game
-	int roll=1;
-	cout << "TRY YOUR LUCK\n";
-	do
-	{
-		cin >> v;
-		int x = rand() % 8;
-		int y = rand() % 8;
-		int z = rand() % 8;
-		cout << x << " | " << y << " | " << z << "\n";
-		
-		c -= coin;
-		if (x == 7 && y == 7 && z == 7)
-		{
-			cout << "You won Jackpot!!!\n";
-			return 0;
-		}
-		else if ((x == 7 && y == 7 && z != 7) || (x == 7 && y != 7 && z == 7) || (x != 7 && y == 7 && z == 7))
-		{
-			c += 2000;
-			cout << "WON WON WON\n";
-		}
-		else if ((x == 7 && y != 7 && z != 7) || (x != 7 && y == 7 && z != 7) || (x != 7 && y != 7 && z == 7))
-		{
-			c += 1000;
-			cout << "WON WON WON\n";
-		}
-		else if (x == 6 && y == 6 && z != 7)
-		{
-			c -= 1000;
-			cout << "WON WON WON\n";
-		}
-		else if ((x == 5 && y == 5 && z != 5) || (x == 5 && y != 5 && z == 5) || (x != 5 && y == 5 && z == 5))
-		{
-			c += 1000;
-			cout << "WON WON WON\n";
-		}
-		else if ((x == 5 && y != 5 && z != 5) || (x != 5 && y == 5 && z != 5) || (x != 5 && y != 5 && z == 5))
-		{
-			c += 500;
-			cout << "WON WON WON\n";
-		}
-		else if (x == 4 && y == 4 && z == 4)
-		{
-			c += 400;
-			cout << "WON WON WON\n";
-		}
-		else if (x == 3 && y == 3 && z == 3)
-		{
-			c += 300;
-			cout << "WON WON WON\n";
-		}
-		else if (x == 2 && y == 2 && z == 2)
-		{
-			c += 200;
-			cout << "WON WON WON\n";
-		}
-		else if (x == 1 && y == 1 && z == 1)
-		{
-			c += 150;
-			cout << "WON WON WON\n";
-		}
-		else if (x == 0 && y == 0 && z == 0)
-		{
-			c += 100;
-			cout << "WON WON WON\n";
-		}
-		else
-		{
-			cout << "Next time. Luck around corner!\n";
-		}
-
-		cout << c << " credits\n";
-		roll++;
-	} while (c>coin);
-	cout << "Hungry cats are waiting at home. You lost in " << roll << " rolls";
-
-}
+//#include <iostream>
+//#include <ctime>
+//using namespace std;
+//int main()
+//{
+//	srand(time(NULL));
+//	int c = 5000;//credits
+//	int v = 0;//activate roll with number. aoutomatic with letter
+//	int coin = 500;//cost of game
+//	int roll=1;
+//	cout << "TRY YOUR LUCK\n";
+//	do
+//	{
+//		cin >> v;
+//		int x = rand() % 8;
+//		int y = rand() % 8;
+//		int z = rand() % 8;
+//		cout << x << " | " << y << " | " << z << "\n";
+//		
+//		c -= coin;
+//		if (x == 7 && y == 7 && z == 7)
+//		{
+//			cout << "You won Jackpot!!!\n";
+//			return 0;
+//		}
+//		else if ((x == 7 && y == 7 && z != 7) || (x == 7 && y != 7 && z == 7) || (x != 7 && y == 7 && z == 7))
+//		{
+//			c += 2000;
+//			cout << "WON WON WON\n";
+//		}
+//		else if ((x == 7 && y != 7 && z != 7) || (x != 7 && y == 7 && z != 7) || (x != 7 && y != 7 && z == 7))
+//		{
+//			c += 1000;
+//			cout << "WON WON WON\n";
+//		}
+//		else if (x == 6 && y == 6 && z != 7)
+//		{
+//			c -= 1000;
+//			cout << "WON WON WON\n";
+//		}
+//		else if ((x == 5 && y == 5 && z != 5) || (x == 5 && y != 5 && z == 5) || (x != 5 && y == 5 && z == 5))
+//		{
+//			c += 1000;
+//			cout << "WON WON WON\n";
+//		}
+//		else if ((x == 5 && y != 5 && z != 5) || (x != 5 && y == 5 && z != 5) || (x != 5 && y != 5 && z == 5))
+//		{
+//			c += 500;
+//			cout << "WON WON WON\n";
+//		}
+//		else if (x == 4 && y == 4 && z == 4)
+//		{
+//			c += 400;
+//			cout << "WON WON WON\n";
+//		}
+//		else if (x == 3 && y == 3 && z == 3)
+//		{
+//			c += 300;
+//			cout << "WON WON WON\n";
+//		}
+//		else if (x == 2 && y == 2 && z == 2)
+//		{
+//			c += 200;
+//			cout << "WON WON WON\n";
+//		}
+//		else if (x == 1 && y == 1 && z == 1)
+//		{
+//			c += 150;
+//			cout << "WON WON WON\n";
+//		}
+//		else if (x == 0 && y == 0 && z == 0)
+//		{
+//			c += 100;
+//			cout << "WON WON WON\n";
+//		}
+//		else
+//		{
+//			cout << "Next time. Luck around corner!\n";
+//		}
+//
+//		cout << c << " credits\n";
+//		roll++;
+//	} while (c>coin);
+//	cout << "Hungry cats are waiting at home. You lost in " << roll << " rolls";
+//}
 
 //5. Королю нужно убить дракона, но средства его казны – ограничены.
 //Нужно создать программу, которая поможет рассчитать минимальное количество копейщиков, которое необходимо, 
@@ -224,3 +223,52 @@ int main()
 //	Дракон атакует(урон 55) – осталось 4 копейщика, один из которых ранен(осталось 5 жизней).
 //	Копейщики атакуют(урон 40) – у дракона осталось 20 очков здоровья.
 //	Дракон атакует и побеждает.
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int DragonHP = 500;
+	int DragonAtk = 55;
+	int LancerHP = 10;
+	int LancerAtk = 10;
+	int Lancer = 20;
+	int ArmyAtk = LancerAtk * Lancer;
+	int ArmyHP = LancerHP * Lancer;
+	int round = 0;
+	do
+	{
+		cout << "Now Drogon has - " << DragonHP << "HP. Lancets deal damage " << ArmyAtk << ".\n";
+		if (DragonHP > ArmyAtk)
+		{
+			DragonHP = DragonHP - ArmyAtk;
+			cout << "Dragon has - " << DragonHP << "HP.\n";
+		}
+		else
+		{
+			cout << "Dragon DEFEAT! King Forever. Tactician!\n";
+			return 0;
+		}
+		cout << "Dragon Attaks with damage of - " << DragonAtk << " !!!\n";
+		if (ArmyHP <= DragonAtk)
+		{
+			cout << "King was greedy. All lancer are dead...\n";
+		}
+		else
+		{
+			ArmyHP -= DragonAtk;
+			Lancer = ArmyHP / LancerHP;
+
+			cout << Lancer + 1 << " Survived Lancers.\n";
+		}
+		if (ArmyHP % LancerHP != 0)
+		{
+			cout << "One injured lancer with " << ArmyHP % LancerHP << " HP\n";
+			
+			cout << ArmyAtk;
+		}
+		
+		(ArmyAtk) = LancerHP * Lancer + ArmyHP % LancerHP;
+	} while (DragonHP >= 0);
+	cout << "King Forever. Tactician!\n";
+}
