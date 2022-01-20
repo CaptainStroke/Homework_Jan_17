@@ -87,7 +87,32 @@
 //{
 //    int n = 10000000;
 //    int e = 1;
+//    int n1 = n & 10;
+//    int n2 = n / 10 % 10;
+//    int n3 = n / 100 % 10;
+//    int n4 = n / 1000 % 10;
+//    int n5 = n / 10000 % 10;
+//    int n6 = n / 100000 % 10;
+//    int n7 = n / 1000000 % 10;
+//    int n8 = n / 10000000 % 10;
 //    do
+//    {
+//        if (n % 12345 == 0
+//            && (n1 != n2 && n1 != n3 && n1 != n4 && n1 != n5 && n1 != n6 && n1 != n7 && n1 != n8
+//                && n2 != n1 && n2 != n3 && n2 != n4 && n2 != n5 && n2 != n6 && n2 != n7 && n2 != n8
+//                    && n3 != n1 && n3 != n2 && n3 != n4 && n3 != n5 && n3 != n6 && n3 != n7 && n3 != n8
+//                        && n4 != n1 && n4 != n2 && n4 != n3 && n4 != n5 && n4 != n6 && n4 != n7 && n4 != n8
+//                            && n5 != n1 && n5 != n2 && n5 != n3 && n5 != n4 &&  n5 != n6 && n5 != n7 && n5 != n8
+//                                && n6 != n1 && n6 != n2 && n6 != n3 && n6 != n4 && n6 != n5 &&  n6 != n7 && n6 != n8
+//                                    && n7 != n1 && n7 != n2 && n7 != n3 && n7 != n4 && n7 != n5 && n7 != n6 &&  n7 != n8
+//                                        && n8 != n1 && n8 != n2 && n8 != n3 && n8 != n4 && n8 != n5 && n8 != n6 && n8 != n7 ))
+//        {
+//            cout << e << " - " << n << "\n";
+//            e++;
+//        }        n += 1;
+//
+//    } while (n < 99999999);
+//   /* do
 //    {
 //        if (n % 12345 == 0
 //            && (n % 10 != n / 10 % 10 && n % 10 != n / 100 % 10 && n % 10 != n / 1000 % 10 && n % 10 != n / 10000 % 10 && n % 10 != n / 100000 % 10 && n % 10 != n / 1000000 % 10 && n % 10 != n / 10000000 % 10
@@ -103,11 +128,56 @@
 //            e++;
 //        }
 //        n += 1;
-//    } while (n < 99999999);
+//    } while (n < 99999999);*/
 //
 //    {
 //        cout << "Not so much! \n";
 //    }
+//}
+//#include <iostream> 
+//using namespace std;
+//
+//int main()
+//{
+//	long long number1 = 00000000;
+//
+//	int a10;
+//	int a11;
+//	int a12;
+//	int a13;
+//	int a14;
+//	int a15;
+//	int a16;
+//
+//	int b1 = 0;
+//
+//	do
+//	{
+//		a10 = number1 % 10;
+//		a11 = number1 / 10 % 10;
+//		a12 = number1 / 100 % 10;
+//		a13 = number1 / 1000 % 10;
+//		a14 = number1 / 10000 % 10;
+//		a15 = number1 / 100000 % 10;
+//		a16 = number1 / 1000000;
+//
+//		if (a10 != a11 && a10 != a12 && a10 != a13 && a10 != a14 && a10 != a15 && a10 != a16
+//			&& a11 != a12 && a11 != a13 && a11 != a14 && a11 != a15 && a11 != a16
+//			&& a12 != a13 && a12 != a14 && a12 != a15 && a12 != a16
+//			&& a13 != a14 && a13 != a15 && a13 != a16
+//			&& a14 != a15 && a14 != a16
+//			&& a15 != a16
+//			&& number1 % 12345 == 0)
+//		{
+//			b1++;
+//			cout << number1 << "\n";
+//		}
+//
+//		number1++;
+//
+//	} while (number1 <= 99999999);
+//
+//	cout << "anount " << b1 << "\n";
 //}
 
 //4. Реализовать игровую программу «Однорукий бандит»(игровой автомат).
@@ -225,6 +295,7 @@
 //	Дракон атакует и побеждает.
 
 #include <iostream>
+#include <windows.h> 
 using namespace std;
 int main()
 {
@@ -233,42 +304,44 @@ int main()
 	int LancerHP = 10;
 	int LancerAtk = 10;
 	int Lancer = 20;
-	int ArmyAtk = LancerAtk * Lancer;
 	int ArmyHP = LancerHP * Lancer;
 	int round = 0;
+	
 	do
 	{
-		cout << "Now Drogon has - " << DragonHP << "HP. Lancets deal damage " << ArmyAtk << ".\n";
-		if (DragonHP > ArmyAtk)
+		cout << "Big Dragon has - " << DragonHP << " HP.\nLancets deal damage " << LancerAtk*Lancer << ".\n";
+		if (DragonHP > LancerAtk * Lancer)// If Dragon survives attack
 		{
-			DragonHP = DragonHP - ArmyAtk;
+			DragonHP = DragonHP - LancerAtk * Lancer;
 			cout << "Dragon has - " << DragonHP << "HP.\n";
 		}
-		else
+		else // If Dragon dies
 		{
 			cout << "Dragon DEFEAT! King Forever. Tactician!\n";
 			return 0;
 		}
+		// Dragon's turn to attack
 		cout << "Dragon Attaks with damage of - " << DragonAtk << " !!!\n";
-		if (ArmyHP <= DragonAtk)
+		if (ArmyHP <= DragonAtk) //All lancets die
 		{
 			cout << "King was greedy. All lancer are dead...\n";
 		}
-		else
+		else //Lancets survive
 		{
 			ArmyHP -= DragonAtk;
 			Lancer = ArmyHP / LancerHP;
 
-			cout << Lancer + 1 << " Survived Lancers.\n";
-		}
-		if (ArmyHP % LancerHP != 0)
-		{
-			cout << "One injured lancer with " << ArmyHP % LancerHP << " HP\n";
+			if (ArmyHP % LancerHP != 0)// If one lancet is injured. But fights strong - foll power
+			{
+				LancerAtk * (Lancer++);
+				cout << Lancer << " Survived Lancers.\n";
+				cout << "One injured lancer with " << ArmyHP % LancerHP << " HP\n";
+			}
 			
-			cout << ArmyAtk;
 		}
 		
-		(ArmyAtk) = LancerHP * Lancer + ArmyHP % LancerHP;
+		
+		//(ArmyAtk) = LancerHP * Lancer + ArmyHP % LancerHP;
 	} while (DragonHP >= 0);
 	cout << "King Forever. Tactician!\n";
 }
