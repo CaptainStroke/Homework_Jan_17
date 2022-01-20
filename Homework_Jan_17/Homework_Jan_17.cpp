@@ -316,7 +316,10 @@
 using namespace std;
 int main()
 {
-	cout << "Enter the HP of Dragon - \n";
+	system("Color 3F");
+	cout << "Dragons VS Lancets\n";
+	
+	/*cout << "Enter the HP of Dragon - \n"; // open this part for hardcore game
 	int DragonHP = 500;
 	cin >> DragonHP;
 	cout << "Dragon Strength - \n";
@@ -332,10 +335,21 @@ int main()
 	int Lancer = 20;
 	cin >> Lancer;
 	int ArmyHP = LancerHP * Lancer;
-	int round = 0;
+	int round = 0;*/
 	
+	int DragonHP = 500;//Close this part for hardcore game
+	int DragonAtk = 55;
+	int LancerHP = 10;
+	int LancerAtk = 10;
+	int Lancer = 20;
+	int ArmyHP = LancerHP * Lancer;
+	int round = 0;
+
 	do
 	{
+		int c = 1;
+		cin >> c;// Press digit for one step. Letter for auto
+		system("Color 5F");
 		cout << "Big Dragon has - " << DragonHP << " HP.\nLancets deal damage " << LancerAtk*Lancer << ".\n";
 		if (DragonHP > LancerAtk * Lancer)// If Dragon survives attack
 		{
@@ -344,10 +358,12 @@ int main()
 		}
 		else // If Dragon dies
 		{
-			cout << "Dragon DEFEAT! King Forever. Tactician!\n";
+			cout << "Dragon SLAUGHTERED! King Forever. Tactician!\n";
 			return 0;
 		}
 		// Dragon's turn to attack
+		cin >> c;
+		system("Color 4F");
 		cout << "Dragon Attaks with damage of - " << DragonAtk << " !!!\n";
 		if (ArmyHP <= DragonAtk) //All lancets die
 		{
