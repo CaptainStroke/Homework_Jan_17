@@ -316,11 +316,21 @@
 using namespace std;
 int main()
 {
+	cout << "Enter the HP of Dragon - \n";
 	int DragonHP = 500;
+	cin >> DragonHP;
+	cout << "Dragon Strength - \n";
 	int DragonAtk = 55;
+	cin >> DragonAtk;
+	cout << "Lancer's HP - \n";
 	int LancerHP = 10;
+	cin >> LancerHP;
+	cout << "Lancer's Attacking strength - \n";
 	int LancerAtk = 10;
+	cin >> LancerAtk;
+	cout << "Quantity of Lancets - \n";
 	int Lancer = 20;
+	cin >> Lancer;
 	int ArmyHP = LancerHP * Lancer;
 	int round = 0;
 	
