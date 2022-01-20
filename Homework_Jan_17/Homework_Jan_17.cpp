@@ -337,11 +337,7 @@ int main()
 				cout << Lancer << " Survived Lancers.\n";
 				cout << "One injured lancer with " << ArmyHP % LancerHP << " HP\n";
 			}
-			
 		}
-		
-		
-		//(ArmyAtk) = LancerHP * Lancer + ArmyHP % LancerHP;
 	} while (DragonHP >= 0);
 	cout << "King Forever. Tactician!\n";
 }
